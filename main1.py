@@ -5,7 +5,7 @@ import yt_dlp as youtube_dl
 import os
 
 # указываем токен для доступа к боту
-bot = telebot.TeleBot('6012969086:AAECbAIXwEbm-418lGy1vxBTgEECxQzZ9t4')
+bot = telebot.TeleBot('')
 
 # приветственный текст
 start_txt = 'Привет!'
@@ -55,7 +55,7 @@ def download_youtube_video(message):
         video = open(video_filename, 'rb')
         bot.send_video(message.chat.id, video)
         video.close()
-        
+            
         os.remove(video_filename)
 
     except Exception as e:
